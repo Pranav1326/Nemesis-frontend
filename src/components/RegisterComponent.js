@@ -8,7 +8,7 @@ const RegisterComponent = () => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     axios.post("https://internship-project-backend.herokuapp.com/user-register", {
       username,
       cellnumber,
@@ -23,7 +23,6 @@ const RegisterComponent = () => {
     .catch((err) => {
       alert("Error creating User!");
     });
-    e.prevetDefault();
   }
 
   return (
