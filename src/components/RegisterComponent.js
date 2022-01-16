@@ -2,28 +2,28 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const RegisterComponent = () => {
-
   const [username, setUsername] = useState("");
   const [cellnumber, setCellnumber] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
 
   const handleSubmit = () => {
-    axios.post("https://internship-project-backend.herokuapp.com/user-register", {
-      username,
-      cellnumber,
-      email,
-      address
-    })
-    .then((res) => {
-      if(res.status === 200){
-        alert("User added Successfully!");
-      }
-    })
-    .catch((err) => {
-      alert("Error creating User!");
-    });
-  }
+    axios
+      .post("https://internship-project-backend.herokuapp.com/user-register", {
+        username,
+        email,
+        cellnumber,
+        address,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          alert("User added Successfully!");
+        }
+      })
+      .catch((err) => {
+        alert("Error creating User!");
+      });
+  };
 
   return (
     <div className="register-page">
@@ -60,7 +60,7 @@ const RegisterComponent = () => {
                 value={cellnumber}
                 onChange={(e) => setCellnumber(e.target.value)}
               />
-            </div>  
+            </div>
             <div className="pass-div">
               <span>Address: </span>
               <input
