@@ -10,6 +10,7 @@ import NavbarComponent from "./components/NavbarComponent";
 function App() {
   const [loggedIn, setloggedIn] = useState(false);
   const { auth } = useContext(AuthContext);
+  
   useEffect(() => {
     if (auth) setloggedIn(auth);
   }, [auth]);

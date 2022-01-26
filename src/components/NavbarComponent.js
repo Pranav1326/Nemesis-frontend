@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
+import { AuthContext } from "../Auth";
 
 const NavbarComponent = () => {
 
+    const { setLogout } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    function handleReg() {
+    const handleReg = () => {
         navigate("/register");
     }
-    function handleHome() {
+    const handleHome = () => {
         navigate("/home");
+    }
+    const handleLogout = () => {
+        setLogout();
     }
 
     return (
@@ -19,6 +24,9 @@ const NavbarComponent = () => {
             <div className="links">
                 <button className='btn' onClick={handleHome}> Home </button>
                 <button className='btn' onClick={handleReg}> Register </button>
+                <button className='btn' 
+                    onClick={handleLogout}
+                > Logout </button>
             </div>
         </nav>
     )

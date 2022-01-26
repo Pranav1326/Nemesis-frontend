@@ -115,7 +115,7 @@ nav h1{
 }
 
 .links{
-    width: 20rem;
+    width: 25rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -127,6 +127,7 @@ nav h1{
     background: transparent;
     width: 8rem;
     padding: 0.5rem;
+    margin: 0 0.5rem;
     color: #D3DEDC;
     font-weight: 700;
     border: 2px solid #D3DEDC;
