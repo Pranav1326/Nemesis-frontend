@@ -40,10 +40,10 @@ const Home = () => {
               <th> Delete Record </th>
             </tr>
           </thead>
-          {data.map((user, i) => {
+          {data.map((user) => {
             return (
-              <tbody>
-                <tr key={i}>
+              <tbody key={user._id}>
+                <tr>
                   <td> {user.username} </td>
                   <td> {user.email} </td>
                   <td> {user.cellnumber} </td>
